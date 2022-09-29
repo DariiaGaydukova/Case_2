@@ -1,19 +1,16 @@
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
 public class WordsChecker {
 
     protected String text;
-    Set<String> textCollection = new HashSet<>();
+    Set<String> textCollection;
 
 
     public WordsChecker(String text) {
-        this.text = text;
-        String[] words = text.split("\\P{IsAlphabetic}+");
-        for (String word : words) {
-            textCollection.add(word);
-        }
+        textCollection = new HashSet<>(List.of(text.split("\\P{IsAlphabetic}+")));
 
     }
 
